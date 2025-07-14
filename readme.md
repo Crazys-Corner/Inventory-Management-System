@@ -14,3 +14,4 @@ To run, simply run fastapi dev main.py
 
 Try to follow PEP8 (I know I won't)
 
+Go to http://localhost:8000/seed to seed the database. 
