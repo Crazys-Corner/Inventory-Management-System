@@ -3,9 +3,15 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import sqlite3
 import database
-
+from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # You can specify specific origins or use "*" for all
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all standard HTTP methods
+    allow_headers=["*"],  # Allows all headers
+)
 class Item(BaseModel):
     id: int     
     name: str
